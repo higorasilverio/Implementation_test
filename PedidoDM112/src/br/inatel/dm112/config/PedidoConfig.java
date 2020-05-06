@@ -33,7 +33,7 @@ public class PedidoConfig {
 
 		try {
 			// Create the Factory
-			emFactory = Persistence.createEntityManagerFactory("pagamentoPU");
+			emFactory = Persistence.createEntityManagerFactory("entregaPU");
 		} catch (Throwable e) {
 			// Make sure you log the exception , as it might be swallowed
 			System.err.println("Error creating EntityManagerFactory ." + e);

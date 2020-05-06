@@ -39,11 +39,11 @@ public class OrderRest implements OrderInterface {
 	}
 
 	@Override
-	@GetMapping("/orders/{cpf:.+}")
-	public List<Order> searchOrders(@PathVariable("cpf") String cpf) {
+	@GetMapping("/orders/{deliverymanCpf:.+}")
+	public List<Order> searchOrders(@PathVariable("deliverymanCpf") String deliverymanCpf) {
 
 		System.out.println("OrderRest - searchOrders");
-		return orderService.searchOrders(cpf);
+		return orderService.searchOrders(deliverymanCpf);
 	}
 
 	@Override

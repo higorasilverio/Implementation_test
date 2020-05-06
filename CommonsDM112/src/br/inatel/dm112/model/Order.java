@@ -5,27 +5,33 @@ import java.util.Date;
 public class Order {
 
 //	@JsonIgnore
-	public static enum STATUS { FILLED, PENDING, CONFIRMED }
+	public static enum STATUS { FILLED, WITHDRAW, DELIVERED }
 
 	private int number;
 
-	private String cpf;
+	private String deliverymanCpf;
 
 	private int status;
 
-	private Date orderDate;
+	private Date orderCreationDate;
+	
+	private String receiverCpf;
+	
+	private Date orderDeliveredDate;
 
 	
 	public Order() {
 	}
 
-	public Order(int number, String cpf, int status, Date orderDate) {
+	public Order(int number, String deliverymanCpf, int status, Date orderCreationDate, String receiverCpf, Date orderDeliveredDate) {
 		super();
 		this.number = number;
-		this.cpf = cpf;
+		this.deliverymanCpf = deliverymanCpf;
 		this.status = status;
-		this.orderDate = orderDate;
-	}
+		this.orderCreationDate = orderCreationDate;
+		this.receiverCpf = receiverCpf;
+		this.orderDeliveredDate = orderDeliveredDate;
+		}
 
 	public int getNumber() {
 		return number;
@@ -44,24 +50,52 @@ public class Order {
 	}
 
 	public Date getOrderDate() {
-		return orderDate;
+		return orderCreationDate;
 	}
 
 	public void setOrderDate(Date orderDate) {
-		this.orderDate = orderDate;
+		this.orderCreationDate = orderDate;
 	}
 
-	public String getCpf() {
-		return cpf;
+	public String getDeliverymanCpf() {
+		return deliverymanCpf;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public void setDeliverymanCpf(String deliverymanCpf) {
+		this.deliverymanCpf = deliverymanCpf;
+	}
+
+	public String getReceiverCpf() {
+		return receiverCpf;
+	}
+
+	public void setReceiverCpf(String receiverCpf) {
+		this.receiverCpf = receiverCpf;
+	}
+	
+	public Date getOrderCreationDate() {
+		return orderCreationDate;
+	}
+
+	public void setOrderCreationDate(Date orderCreationDate) {
+		this.orderCreationDate = orderCreationDate;
+	}
+
+	public Date getOrderDeliveredDate() {
+		return orderDeliveredDate;
+	}
+
+	public void setOrderDeliveredDate(Date orderDeliveredDate) {
+		this.orderDeliveredDate = orderDeliveredDate;
 	}
 
 	@Override
 	public String toString() {
-		return "Order [number=" + number + ", cpf=" + cpf + ", status=" + status + ", orderDate=" + orderDate + "]";
+		return "Order [number=" + number + ", deliverymanCpf=" + deliverymanCpf + ", status=" + status
+				+ ", orderCreationDate=" + orderCreationDate + ", receiverCpf=" + receiverCpf + ", orderDeliveredDate="
+				+ orderDeliveredDate + "]";
 	}
+	
+	
 
 }

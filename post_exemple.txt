@@ -1,0 +1,8 @@
+{
+"number": 123,
+"deliverymanCpf": "111.111.111-11",
+"status": 0,
+"orderCreationDate": 1587158424651,
+"receiverCpf": "111.111.111-11",
+"orderDeliveredDate": 1587158424652
+}

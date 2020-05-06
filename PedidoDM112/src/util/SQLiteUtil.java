@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class SQLiteUtil {
 
-	private static final String DB_FILE_NAME = "pagamento.sqlite\\pagamento.sqlite";
+	private static final String DB_FILE_NAME = "pedido.sqlite\\pedido.sqlite";
 	
 	public static void main(String[] args) {
 		try {
@@ -28,9 +28,11 @@ public class SQLiteUtil {
 		try {
 			String script = "CREATE TABLE Pedido ( " 
 					+ "    numero INTEGER NOT NULL, " 
-					+ "	   cpf VARCHAR(14) NOT NULL, " 
+					+ "	   deliverymanCpf VARCHAR(14) NOT NULL, " 
 					+ "    status INTEGER NOT NULL, " 
-					+ "    dataPedido DATE NOT NULL, "
+					+ "    dataCriacaoPedido DATE NOT NULL, "
+					+ "	   receiverCpf VARCHAR(14) NOT NULL, " 
+					+ "    dataEntregaPedido DATE NOT NULL, "
 					+ "    CONSTRAINT Pedido_pk PRIMARY KEY (numero) " 
 					+ " ); ";
 

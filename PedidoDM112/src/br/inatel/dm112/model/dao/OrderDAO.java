@@ -30,12 +30,12 @@ public class OrderDAO {
 		return entityManager.find(OrderEntity.class, number);
 	}
 
-	public List<OrderEntity> getOrdersByCPF(String cpf) {
-		System.out.println("Consultando pedidos do cpf: " + cpf);
+	public List<OrderEntity> getOrdersByCPF(String deliverymanCpf) {
+		System.out.println("Consultando pedidos do cpf: " + deliverymanCpf);
 
-		String ql = "select o from OrderEntity o where o.cpf = :cpfFilter";
+		String ql = "select o from OrderEntity o where o.deliverymanCpf = :deliverymanCpfFilter";
 		TypedQuery<OrderEntity> q = entityManager.createQuery(ql, OrderEntity.class);
-		q.setParameter("cpfFilter", cpf);
+		q.setParameter("deliverymanCpfFilter", deliverymanCpf);
 
 		List<OrderEntity> orders = q.getResultList();
 		printOrders(orders);

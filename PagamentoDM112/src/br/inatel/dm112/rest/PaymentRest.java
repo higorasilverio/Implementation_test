@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.inatel.dm112.interfaces.Payment;
-import br.inatel.dm112.model.PaymentStatus;
+import br.inatel.dm112.model.DeliveryStatus;
 import br.inatel.dm112.services.PaymentService;
 
 @RestController
@@ -19,7 +19,7 @@ public class PaymentRest implements Payment {
 
 	@Override
 	@GetMapping("/startPaymentOfOrder/{cpf:.+}/{orderNumber}")
-	public PaymentStatus startPaymentOfOrder(
+	public DeliveryStatus startPaymentOfOrder(
 			@PathVariable("cpf")String cpf, 
 			@PathVariable("orderNumber") int orderNumber) {
 		
@@ -29,7 +29,7 @@ public class PaymentRest implements Payment {
 
 	@Override
 	@GetMapping("/confirmPaymentOfOrder/{cpf:.+}/{orderNumber}")
-	public PaymentStatus confirmPaymentOfOrder(
+	public DeliveryStatus confirmPaymentOfOrder(
 			@PathVariable("cpf") String cpf, 
 			@PathVariable("orderNumber") int orderNumber) {
 		

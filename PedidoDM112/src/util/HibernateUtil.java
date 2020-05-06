@@ -11,7 +11,7 @@ public class HibernateUtil {
 	private static EntityManagerFactory buildSessionFactory() {
 		try {
 			// Create the Factory
-			return Persistence.createEntityManagerFactory("pagamentoPU");
+			return Persistence.createEntityManagerFactory("entregaPU");
 		} catch (Throwable ex) {
 			// Make sure you log the exception, as it might be swallowed
 			System.err.println("Initial SessionFactory creation failed." + ex);

@@ -6,7 +6,7 @@ import br.inatel.dm112.client.EmailClient;
 import br.inatel.dm112.client.OrderRestClient;
 import br.inatel.dm112.model.Order;
 import br.inatel.dm112.model.OrderResponse;
-import br.inatel.dm112.model.PaymentStatus;
+import br.inatel.dm112.model.DeliveryStatus;
 import br.inatel.dm112.model.ResponseStatus;
 
 @Service
@@ -33,10 +33,10 @@ public class PaymentService {
 	 * @param orderNumber
 	 * @return
 	 */
-	public PaymentStatus startPaymentOfOrder(String cpf, int orderNumber) {
+	public DeliveryStatus startPaymentOfOrder(String cpf, int orderNumber) {
 		
 		if (cpf == null || orderNumber < 0) {
-			return new PaymentStatus(ResponseStatus.ERROR.ordinal(), cpf, orderNumber);
+			return new DeliveryStatus(ResponseStatus.ERROR.ordinal(), cpf, orderNumber);
 		}
 
 		Order order = clientOrder.retrieveOrder(orderNumber); //(1) consulta o pedido pelo número
@@ -50,7 +50,7 @@ public class PaymentService {
 		} else {
 			System.out.println("Erro no serviço de pedido: get");
 		}
-		return new PaymentStatus(ResponseStatus.ERROR.ordinal(), cpf, orderNumber); //retorna ERRO
+		return new DeliveryStatus(ResponseStatus.ERROR.ordinal(), cpf, orderNumber); //retorna ERRO
 	}
 
 	/**
@@ -64,10 +64,10 @@ public class PaymentService {
 	 * @param orderNumber
 	 * @return
 	 */
-	public PaymentStatus confirmPaymentOfOrder(String cpf, int orderNumber) {
+	public DeliveryStatus confirmPaymentOfOrder(String cpf, int orderNumber) {
 		
 		if (cpf == null || orderNumber < 0) {
-			return new PaymentStatus(ResponseStatus.ERROR.ordinal(), cpf, orderNumber);
+			return new DeliveryStatus(ResponseStatus.ERROR.ordinal(), cpf, orderNumber);
 		}
 		
 		Order order = clientOrder.retrieveOrder(orderNumber); //(1) consulta o pedido pelo número
@@ -77,13 +77,13 @@ public class PaymentService {
 			OrderResponse respOrder = clientOrder.updateOrder(order); //(3) atualiza o status do pedido
 
 			if(respOrder.getStatus() == ResponseStatus.OK.ordinal()) { //OK
-				return new PaymentStatus(ResponseStatus.OK.ordinal(), cpf, orderNumber); //(4) responde Ok
+				return new DeliveryStatus(ResponseStatus.OK.ordinal(), cpf, orderNumber); //(4) responde Ok
 			} else {
 				System.out.println("Erro no serviço de pedido ao fazer update.");
 			}
 		} else {
 			System.out.println("Erro no serviço de pedido: order is null.");
 		}
-		return new PaymentStatus(ResponseStatus.ERROR.ordinal(), cpf, orderNumber);
+		return new DeliveryStatus(ResponseStatus.ERROR.ordinal(), cpf, orderNumber);
 	}
 }

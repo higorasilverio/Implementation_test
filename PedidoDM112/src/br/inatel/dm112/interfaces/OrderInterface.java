@@ -9,7 +9,7 @@ public interface OrderInterface {
 
 	public Order getOrder(int orderNumber);
 
-	public List<Order> searchOrders(String cpf);
+	public List<Order> searchOrders(String deliverymanCpf);
 
 	public OrderResponse updateOrder(Order order);
 

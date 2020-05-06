@@ -1,11 +1,11 @@
 package br.inatel.dm112.interfaces;
 
-import br.inatel.dm112.model.PaymentStatus;
+import br.inatel.dm112.model.DeliveryStatus;
 
 public interface Payment {
 
-	PaymentStatus startPaymentOfOrder(String cpf, int orderNumber);
+	DeliveryStatus startPaymentOfOrder(String cpf, int orderNumber);
 
-	PaymentStatus confirmPaymentOfOrder(String cpf, int orderNumber);
+	DeliveryStatus confirmPaymentOfOrder(String cpf, int orderNumber);
 
 }
