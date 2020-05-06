@@ -1,14 +1,9 @@
 package br.inatel.dm112.services;
 
-import java.util.Date;
-
 import org.springframework.stereotype.Service;
 
-import br.inatel.dm112.client.BilletClient;
 import br.inatel.dm112.client.EmailClient;
 import br.inatel.dm112.client.OrderRestClient;
-import br.inatel.dm112.model.BilletGenResponse;
-import br.inatel.dm112.model.MailStatusResponse;
 import br.inatel.dm112.model.Order;
 import br.inatel.dm112.model.OrderResponse;
 import br.inatel.dm112.model.PaymentStatus;
@@ -24,7 +19,6 @@ public class PaymentService {
 	private String sendPassAddress = "robertodm112";
 
 	private OrderRestClient clientOrder = new OrderRestClient();
-	private BilletClient clientBillet = new BilletClient();
 	private EmailClient clientEmail = new EmailClient();
 
 	/**
@@ -50,19 +44,9 @@ public class PaymentService {
 		if(order != null) { //TODO: alguma hora será preciso verificar o status do pedido aqui
 			order.setStatus(Order.STATUS.PENDING.ordinal()); //pendente de pagamento
 			OrderResponse respOrder = clientOrder.updateOrder(order); //(2) atualiza o status do pedido
-
-			if(respOrder.getStatus() == ResponseStatus.OK.ordinal()) { //OK
-				BilletGenResponse respBillet = clientBillet.callGenerateBilletService(orderNumber, cpf); //(3) gera o boleto
 			
-				if(respBillet.getStatus() == ResponseStatus.OK.ordinal()) {//OK
 					System.out.println("Operações para gerar um boleto, projeto antigo, ocorreram normalmente");
 					
-				} else {
-					System.out.println("Erro no serviço de boleto");
-				}
-			} else {
-				System.out.println("Erro no serviço de pedido: update");
-			}
 		} else {
 			System.out.println("Erro no serviço de pedido: get");
 		}

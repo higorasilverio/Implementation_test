@@ -1,7 +1,5 @@
 package br.inatel.dm112.client;
 
-import java.util.Date;
-
 import br.inatel.dm112.model.Order;
 import br.inatel.dm112.model.OrderResponse;
 
