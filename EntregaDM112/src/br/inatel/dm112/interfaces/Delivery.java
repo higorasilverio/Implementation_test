@@ -5,7 +5,7 @@ import br.inatel.dm112.services.DeliveryService;
 
 public interface Delivery {
 
-	DeliveryService trackNumber(String cpf, int orderNumber);
+	DeliveryStatus trackNumber(String cpf, int orderNumber);
 
 	DeliveryStatus deliveryStatus(String cpf, int orderNumber);
 

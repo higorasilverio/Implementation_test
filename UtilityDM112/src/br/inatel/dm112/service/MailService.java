@@ -13,8 +13,8 @@ public class MailService {
 		if (mailData.getFrom() == null || 
 				mailData.getPassword() == null || 
 				mailData.getTo() == null) {
-			return new MailStatusResponse(MailStatusResponse.STATUS.ERROR.ordinal(), 
-					mailData.getFrom(), mailData.getTo());
+			return new MailStatusResponse(MailStatusResponse.STATUS.ERROR.ordinal(), mailData.getFrom(), 
+					mailData.getTo(), "Error sending e-mail!");
 		}
 
 		MailAdapter sender = new MailAdapter();
@@ -23,10 +23,10 @@ public class MailService {
 		} catch(Exception e) {
 			e.printStackTrace();
 			return new MailStatusResponse(MailStatusResponse.STATUS.ERROR.ordinal(), 
-					mailData.getFrom(), mailData.getTo());
+					mailData.getFrom(), mailData.getTo(), "Error sending e-mail!");
 		}
 		return new MailStatusResponse(MailStatusResponse.STATUS.OK.ordinal(), 
-				mailData.getFrom(), mailData.getTo());
+				mailData.getFrom(), mailData.getTo(), "Email sent correctly!");
 	}
 
 }

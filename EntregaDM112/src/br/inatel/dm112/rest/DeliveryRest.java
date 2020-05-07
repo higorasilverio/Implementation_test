@@ -16,13 +16,14 @@ import br.inatel.dm112.services.DeliveryService;
 @RestController
 @RequestMapping("/api")
 public class DeliveryRest implements Delivery {
+	
 
 	@Autowired
 	private DeliveryService service;
 
 	@Override
 	@GetMapping("/trackNumber/{deliverymanCpf:.+}/{orderNumber}")
-	public DeliveryService trackNumber(
+	public DeliveryStatus trackNumber(
 			@PathVariable("deliverymanCpf")String deliverymanCpf, 
 			@PathVariable("orderNumber") int orderNumber) {
 		
