@@ -5,7 +5,6 @@ public class OrderResponse {
 	private int status;
 
 	public OrderResponse() {
-
 	}
 
 	public OrderResponse(int status) {

@@ -87,7 +87,5 @@ public class Order {
 				+ ", orderCreationDate=" + orderCreationDate + ", receiverCpf=" + receiverCpf + ", orderDeliveredDate="
 				+ orderDeliveredDate + "]";
 	}
-	
-	
 
 }

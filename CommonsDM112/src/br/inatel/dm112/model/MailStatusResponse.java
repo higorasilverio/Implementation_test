@@ -52,4 +52,5 @@ public class MailStatusResponse {
 	public void setMessage(String message) {
 		this.message = message;
 	}
+	
 }

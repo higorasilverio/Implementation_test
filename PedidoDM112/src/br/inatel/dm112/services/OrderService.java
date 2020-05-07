@@ -26,6 +26,7 @@ public class OrderService {
 			order = convertToOrder(entity);
 		}
 		return order;
+		
 	}
 
 	public List<Order> searchOrders(String deliverymanCpf) {
@@ -37,6 +38,7 @@ public class OrderService {
 			orders.add(order);
 		}
 		return orders;
+		
 	}
 
 	public void updateOrder(Order order) {

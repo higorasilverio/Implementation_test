@@ -39,7 +39,7 @@ public class MailAdapter {
 			message.setSubject("Confirmação");
 
 			Multipart multipart = new MimeMultipart();
-			BodyPart messageBodyPartText = new MimeBodyPart(); // texto
+			BodyPart messageBodyPartText = new MimeBodyPart(); // Do corpo do email
 			messageBodyPartText.setText("Confirmação de entrega do pedido");
 			multipart.addBodyPart(messageBodyPartText);
 

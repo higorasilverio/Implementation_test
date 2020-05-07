@@ -22,7 +22,6 @@ public class DeliveryService {
 	private OrderRestClient clientOrder = new OrderRestClient();
 	private EmailClient clientEmail = new EmailClient();
 
-
 	/**
 	 * Lógica de geração do numero de rastreio (1) consulta o pedido pelo número (2)
 	 * retira pedido (3) atualiza status do pedido
