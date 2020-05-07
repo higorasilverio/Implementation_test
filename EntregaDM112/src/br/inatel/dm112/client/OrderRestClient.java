@@ -15,9 +15,6 @@ public class OrderRestClient {
 	// local
 	private String restURL = "http://localhost:8080/PedidoDM112/api/";
 	
-	// GAE:
-	//private String restURL = "https://dm112project.appspot.com/api/";
-
 	/**
 	 * createOrder
 	 * @param order
@@ -48,8 +45,8 @@ public class OrderRestClient {
 	 * @param cpf
 	 * @return
 	 */
-	public List<Order> getItems(String cpf) {
-		String url = restURL + "orders/" + cpf;
+	public List<Order> getItems(String deliverymanCpf) {
+		String url = restURL + "orders/" + deliverymanCpf;
 		
 		return WebClient.create(url)
 		        .get()

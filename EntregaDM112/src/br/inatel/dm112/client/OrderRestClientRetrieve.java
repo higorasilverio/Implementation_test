@@ -9,7 +9,7 @@ public class OrderRestClientRetrieve {
 	public static void main(String[] args) {
 		OrderRestClient client = new OrderRestClient();
 
-		int orderNumber = 456;
+		int orderNumber = 789;
 		
 		Order orderResp = client.retrieveOrder(orderNumber);
 		if (orderResp == null) {

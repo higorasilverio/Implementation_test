@@ -49,14 +49,6 @@ public class Order {
 		this.status = status;
 	}
 
-	public Date getOrderDate() {
-		return orderCreationDate;
-	}
-
-	public void setOrderDate(Date orderDate) {
-		this.orderCreationDate = orderDate;
-	}
-
 	public String getDeliverymanCpf() {
 		return deliverymanCpf;
 	}

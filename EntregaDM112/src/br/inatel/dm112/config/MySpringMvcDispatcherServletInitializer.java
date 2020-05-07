@@ -11,7 +11,7 @@ public class MySpringMvcDispatcherServletInitializer extends AbstractAnnotationC
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class[] { PagamentoConfig.class };
+		return new Class[] { EntregaConfig.class };
 	}
 
 	@Override
