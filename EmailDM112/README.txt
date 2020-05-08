@@ -1,0 +1,1 @@
+Projeto contendo as classes responsáveis pela geração do email ao cliente.

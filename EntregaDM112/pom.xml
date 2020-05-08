@@ -43,7 +43,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>br.inatel.dm112</groupId>
-			<artifactId>CommonsDM112</artifactId>
+			<artifactId>ComunsDM112</artifactId>
 			<version>1.0</version>
 			<type>jar</type>
 		</dependency>

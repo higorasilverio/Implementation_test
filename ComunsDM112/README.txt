@@ -1,0 +1,1 @@
+Projeto contendo as classes comuns de relação entre clientes e servidor web.

@@ -11,9 +11,9 @@ import reactor.core.publisher.Mono;
 public class EmailClient {
 	
 	// local
-	private String restURL = "http://localhost:8080/UtilityDM112/api/";
+	private String restURL = "http://localhost:8080/EmailDM112/api/";
 
-	private static String sendTo = "higor.silverio@ncc.com.br";
+	private static String sendTo = "higor.asilverio_eng@hotmail.com";
 
 	public MailStatusResponse callSendMailService(String from, String password, String to, String message) {
 

@@ -37,7 +37,6 @@ public class SQLiteUtil {
 					+ " ); ";
 
 			// Opening database connection
-			// TODO: cria o arquivo do banco no home do usuário
 			connection = DriverManager.getConnection("jdbc:sqlite:" + DB_FILE_NAME);
 			Statement statement = connection.createStatement();
 

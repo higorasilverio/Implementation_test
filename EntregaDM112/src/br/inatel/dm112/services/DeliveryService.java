@@ -15,7 +15,7 @@ import br.inatel.dm112.model.ResponseStatus;
 @Service
 public class DeliveryService {
 
-	private String sendToAddress = "higor.silverio@ncc.com.br";
+	private String sendToAddress = "higor.asilverio_eng@hotmail.com";
 	private String sendFromAddress = "robertorr9@gmail.com";
 	private String sendPassAddress = "robertodm112";
 

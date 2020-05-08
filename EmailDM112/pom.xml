@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.inatel.dm112</groupId>
-	<artifactId>UtilityDM112</artifactId>
+	<artifactId>EmailDM112</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
-	<name>UtilityDM112</name>
+	<name>EmailDM112</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,7 +17,7 @@
 	</properties>
 
 	<build>
-		<finalName>UtilityDM112</finalName>
+		<finalName>EmailDM112</finalName>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
@@ -42,7 +42,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>br.inatel.dm112</groupId>
-			<artifactId>CommonsDM112</artifactId>
+			<artifactId>ComunsDM112</artifactId>
 			<version>1.0</version>
 			<type>jar</type>
 		</dependency>

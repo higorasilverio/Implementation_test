@@ -11,10 +11,10 @@
     <name>Projects used in DM112 final project</name>
 
     <modules>
-        <module>CommonsDM112</module>
+        <module>ComunsDM112</module>
         <module>EntregaDM112</module>
         <module>PedidoDM112</module>
-        <module>UtilityDM112</module>
+        <module>EmailDM112</module>
     </modules>
 
     <build>
